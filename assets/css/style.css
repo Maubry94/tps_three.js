@@ -1,0 +1,132 @@
+@import url("./fonts.css");
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Alliance No.2" !important;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+
+.bottom {
+	position: absolute;
+	z-index: 2;
+	left: 0;
+	bottom: 35px;
+	width: 100vw;
+	min-height: 100px;
+	max-height: 320px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-end;
+	user-select: none;
+	pointer-events: none;
+}
+
+notice {
+	background-color: rgba(0, 0, 0, 0.8);
+	color: white;
+	font-family: "Courier New", Courier, monospace;
+	font-size: 14px;
+	line-height: 24px;
+	text-align: center;
+	padding: 0 8px;
+	margin: 0 16px 8px;
+}
+
+.control-inactive {
+	color: #888;
+	font-style: italic;
+}
+
+.overlay {
+	position: absolute;
+	font-size: 16px;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background: rgba(0, 0, 0, 1);
+}
+
+.overlay h2 {
+	animation: blinking 2s linear infinite;
+}
+
+.lds-ctnr {
+	position: absolute;
+	z-index: 10000;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.lds-facebook {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+}
+.lds-facebook div {
+	display: inline-block;
+	position: absolute;
+	left: 8px;
+	width: 16px;
+	background: #fff;
+	animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+.lds-facebook div:nth-child(1) {
+	left: 8px;
+	animation-delay: -0.24s;
+}
+.lds-facebook div:nth-child(2) {
+	left: 32px;
+	animation-delay: -0.12s;
+}
+.lds-facebook div:nth-child(3) {
+	left: 56px;
+	animation-delay: 0;
+}
+
+.btn {
+	display: none;
+	margin-top: 20px;
+	padding: 7px 20px;
+	border-radius: 10px;
+	border: none;
+	cursor: pointer;
+}
+
+@keyframes lds-facebook {
+	0% {
+		top: 8px;
+		height: 64px;
+	}
+	50%,
+	100% {
+		top: 24px;
+		height: 32px;
+	}
+}
+
+@keyframes blinking {
+	0% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
